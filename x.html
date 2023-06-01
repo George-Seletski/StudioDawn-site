@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container-flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 70px;
+        margin-right: 70px;
+        overflow: auto;
+        gap: 170px;
+        border: 1px solid;
+        height: 410px;
+        left: calc(50% - 1350px/2);
+        top: 90px;
+    }
+    
+    .container-item {
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        width: 320px;
+        height: 210px;
+        border: 1px solid;
+    }
+    /* Responsive styles */
+    
+    @media (max-width: 991px) {
+        .container-flex-center {
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 30px;
+        }
+        .container-item {
+            width: 300px;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        .container-flex-center {
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+        }
+        .container-item {
+            width: 90%;
+        }
+    }
+    
+    @media (max-width: 497px) {
+        .container-item {
+            gap: 20px;
+        }
+    }
+</style>
+
+<body>
+    <div class="container-flex-center">
+        <div class="container-item">
+            <h3>The What</h3>
+            <span class="w-description">From strategy to storytelling, brand experience to boundary-pushing design, we
+                apply unconventional creativity to clients doing right by the world. We turn compelling ideas into
+                commercial success stories through the power of brand in all
+                its forms.</span>
+        </div>
+        <div class="container-item">
+            <h3>The What</h3>
+            <p class="w-description">From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional creativity to clients doing right by the world. We turn compelling ideas into commercial success stories through the power of brand in all
+                its forms.</p>
+        </div>
+        <div class="container-item">
+            <h3>The What</h3>
+            <p class="w-description">From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional creativity to clients doing right by the world. We turn compelling ideas into commercial success stories through the power of brand in all
+                its forms.</p>
+        </div>
+    </div>
+</body>
+
+</html>
