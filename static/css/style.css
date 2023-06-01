@@ -631,7 +631,6 @@ footer {
     border-bottom: 1px solid #979797;
     color: #ddd;
     font-size: 14px;
-    text-transform: uppercase;
     outline: none;
     transition: border-color .2s;
 }
@@ -773,6 +772,16 @@ span.active {
     gap: 170px;
     width: 1300px;
     height: 210px;
+}
+
+.container-default-center {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    overflow: auto;
 }
 
 .container-items {
