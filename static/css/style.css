@@ -506,8 +506,8 @@ sub {
     align-items: flex-start;
     margin-bottom: 10px;
     height: 31.5em;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-right: 62px;
+    margin-left: 62px;
 }
 
 .container-item>h3 {
@@ -527,15 +527,29 @@ sub {
     flex: 1;
     align-items: flex-start;
     margin-right: 0;
-    border: 1px solid #FFFFFF;
+    margin-bottom: 70px;
 }
+
+.section-text-left {
+    height: 108px;
+    flex: 3;
+    margin-left: 70px;
+    top: 110px;
+    /* Main text */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 112%;
+}
+
+.section-text-right {}
 
 footer {
     background-color: #050A11;
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 800px;
 }
 
 .footer-heading {
