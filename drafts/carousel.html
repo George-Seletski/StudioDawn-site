@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<style>
+    body,
+    html {
+        padding: 0px;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        font-family: Open Sans;
+        color: #4d4d4d;
+    }
+    
+    h2 {
+        font-weight: 300;
+    }
+    
+    a,
+    h2 a {
+        font-weight: 800;
+        text-decoration: none;
+        color: #2eb82e;
+    }
+    
+    .fa-heart {
+        color: #ff1a1a;
+    }
+    
+    a {
+        font-weight: 200;
+        color: #2eb82e;
+    }
+    
+    a:hover,
+    h2 a:hover {
+        opacity: .7;
+    }
+    
+    .container {
+        text-align: center;
+        bottom: 0%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+    
+    #images {
+        perspective: 1000;
+        width: 80%;
+        height: 50%;
+        cursor: none;
+        bottom: 5%;
+        left: 50%;
+        overflow: hidden;
+        position: relative;
+        transform: translate(-50%, 50%);
+    }
+    
+    #images .half {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        transition: all 500ms ease-in-out;
+    }
+    
+    #images .half.active {
+        opacity: 1;
+    }
+    
+    #images .half:not(.active) {
+        opacity: 0;
+    }
+    
+    #images .half:not(.active).left {
+        left: 100%;
+    }
+    
+    #images .half:not(.active).right {
+        left: -50%;
+    }
+    
+    #images .half.left {
+        left: 0;
+        right: 50%;
+    }
+    
+    #images .half.right {
+        right: 0;
+        left: 50%;
+    }
+    
+    #images img {
+        width: 100%;
+        min-height: 100%;
+    }
+    
+    #cursor {
+        z-index: 1;
+        display: none;
+        pointer-events: none;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+    }
+    
+    #cursor .arrow-line {
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        transition: all 150ms ease-in-out;
+    }
+    
+    #cursor .arrow-line.top {
+        top: 0px;
+    }
+    
+    #cursor .arrow-line.bottom {
+        bottom: 0px;
+    }
+    
+    #cursor.no-more .arrow-line.top {
+        top: 25%;
+    }
+    
+    #cursor.no-more .arrow-line.bottom {
+        bottom: 25%;
+    }
+    
+    #cursor .arrow-line:after {
+        content: " ";
+        height: 2px;
+        width: 120%;
+        background: white;
+        position: absolute;
+        transition: all 150ms ease-in-out;
+    }
+    
+    #cursor.right .arrow-line.top:after {
+        transform: rotate(-135deg);
+        top: 20%;
+    }
+    
+    #cursor.right .arrow-line.bottom:after {
+        transform: rotate(135deg);
+        bottom: 20%;
+    }
+    
+    #cursor.left .arrow-line.top:after {
+        transform: rotate(-45deg);
+        top: 20%;
+    }
+    
+    #cursor.left .arrow-line.bottom:after {
+        transform: rotate(45deg);
+        bottom: 20%;
+    }
+</style>
+
+<body>
+
+
+    <div id="cursor" class="left">
+        <div class="arrow-line top"></div>
+        <div class="arrow-line bottom"></div>
+    </div>
+    <div id="images">
+        <div class="half left">
+            <img src="https://unsplash.it/604/800">
+        </div>
+        <div class="half right">
+            <img src="https://unsplash.it/600/801">
+        </div>
+        <div class="half left">
+            <img src="https://unsplash.it/601/802">
+        </div>
+        <div class="half right">
+            <img src="https://unsplash.it/601/803">
+        </div>
+        <div class="half left active">
+            <img src="https://unsplash.it/601/807">
+        </div>
+        <div class="half right active">
+            <img src="https://unsplash.it/600/803">
+        </div>
+        <div class="half left">
+            <img src="https://unsplash.it/601/801">
+        </div>
+    </div>
+
+
+</body>
+<script>
+    var halfWidth = 0;
+    $(document).ready(function() {
+        halfWidth = ($('#images').innerWidth() / 2) + $('#images').position().left;
+    });
+    $(window).resize(function() {
+        halfWidth = ($('#images').innerWidth() / 2) + $('#images').position().left;
+    });
+
+    var flag = 'none';
+    $('#images').on('mouseenter', function(e) {
+        $('#cursor').fadeIn(50);
+    });
+    $('#images').on('mouseleave', function(e) {
+        $('#cursor').fadeOut(200);
+    });
+
+    $('#images .half').on('click', function() {
+
+        if (($(this).hasClass('left') && $('#images .half.active').first().prev().length) ||
+            ($(this).hasClass('right') && $('#images .half.active').last().next().length)) {
+            $(this).prev().toggleClass('active');
+            $(this).next().toggleClass('active');
+            $('#images .half').toggleClass('right left');
+
+            if ((flag == 'right' && !$(this).next().next().length) ||
+                (flag == 'left' && !$(this).prev().prev().length)) {
+                $('#cursor').addClass('no-more');
+            }
+
+        } else {
+            window.open('http://www.pipiaco.com/en/', '_blank');
+        }
+
+    });
+
+    /*CODE FOR CURSOR*/
+    $('#images').on('mousemove', function(e) {
+        $('#cursor').css({
+            "transform": "translate3d(" + (e.pageX - 30) + "px, " + (e.pageY - 25) + "px, 0px)"
+        });
+
+        if (e.pageX > halfWidth && flag != 'right') {
+            $('#cursor').removeClass('left');
+            $('#cursor').addClass('right');
+            flag = 'right';
+        } else if (e.pageX < halfWidth && flag != 'left') {
+            $('#cursor').removeClass('right');
+            $('#cursor').addClass('left');
+            flag = 'left';
+        }
+
+        if ((flag == 'right' && !$('#images .half.active').last().next().length) ||
+            (flag == 'left' && !$('#images .half.active').first().prev().length)) {
+            $('#cursor').addClass('no-more');
+        } else {
+            $('#cursor').removeClass('no-more');
+        }
+
+    });
+</script>
+
+</html>

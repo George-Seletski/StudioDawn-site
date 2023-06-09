@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Align items to the center */
+            min-height: 100vh;
+            /* Set a minimum height to ensure the element stays at the center */
+            background-color: #050A11;
+        }
+        
+        @property --percentage {
+            initial-value: 0%;
+            inherits: false;
+            syntax: "<percentage>";
+        }
+        
+        .chart {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: conic-gradient(#FFFFFF var(--percentage), rgba(255, 255, 255, 0) 0);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+        }
+        
+        .chart.animate {
+            animation: timer 4s linear forwards;
+        }
+        
+        @keyframes timer {
+            0% {
+                --percentage: 0%;
+                transform: translateX(-50%) translateY(0%) scale(1);
+            }
+            100% {
+                --percentage: 100%;
+            }
+        }
+        
+        #circle {
+            opacity: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: bottom 2s, transform 4s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chart"></div>
+    <div id="circle"></div>
+
+    <script>
+        window.addEventListener('load', function() {
+
+            const circle = document.getElementById("circle");
+            const chart = document.querySelector(".chart");
+            chart.classList.add('animate');
+            const body = document.body;
+
+            setTimeout(() => {
+                chart.style.opacity = "0";
+                circle.style.opacity = "1";
+                circle.style.bottom = "60vh";
+                circle.style.transform = "translateX(-50%) scale(10)";
+
+                const circleRadius = circle.getBoundingClientRect().width / 2;
+                const screenHeight = window.innerHeight;
+
+                if (circleRadius * 10 > screenHeight) {
+                    body.style.backgroundColor = "grey";
+                    circle.style.display = 'none';
+                } else {
+                    circle.style.display = 'block';
+                }
+            }, 4000); // Delay the chart loading animation for 4 seconds
+        });
+    </script>
+</body>
+
+</html>

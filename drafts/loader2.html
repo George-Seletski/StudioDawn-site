@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Align items to the center */
+            max-height: 100vh;
+            /* Set a minimum height to ensure the element stays at the center */
+            background-color: #050A11;
+            transition: background-color 2s;
+        }
+        
+        .chart {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+            background: conic-gradient(#FFFFFF var(--percentage), rgba(255, 255, 255, 0) 0);
+        }
+        
+        .chart.animate {
+            animation: timer 4s linear forwards;
+        }
+        
+        .chart.animate-scale {
+            animation: scale 4s linear forwards;
+        }
+        
+        @keyframes timer {
+            0% {
+                --percentage: 0%;
+                transform: translateX(-50%) translateY(0%) scale(1);
+            }
+            100% {
+                --percentage: 100%;
+            }
+        }
+        
+        @keyframes scale {
+            0% {
+                transform: translateX(-50%) scale(1);
+                transition: transform 2s;
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-50%) scale(20);
+                transition: transform 2s;
+                opacity: 0;
+            }
+        }
+        
+        #circle {
+            opacity: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: bottom 2s, transform 4s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chart"></div>
+    <div id="circle"></div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const circle = document.getElementById("circle");
+            const chart = document.querySelector(".chart");
+            chart.classList.add('animate');
+            const body = document.body;
+            body.style.overflowY = 'hidden';
+            body.style.overflowX = 'hidden';
+            setTimeout(() => {
+                chart.style.opacity = "0";
+                circle.style.opacity = "1";
+                circle.style.bottom = "70vh";
+                circle.style.backgroundColor = 'grey';
+                if (window.innerWidth < 479) {
+                    circle.style.transform = "translateX(-35%) scale(15)";
+                } else {
+                    circle.style.transform = "translateX(-50%) scale(17)";
+                }
+
+
+                setTimeout(() => {
+
+                    circle.classList.add('animate-scale');
+                    if (window.innerWidth < 479) {
+                        setTimeout(() => {
+
+                            body.style.backgroundColor = "#050A11";
+
+                            circle.style.display = 'none';
+                            body.style.overflowY = 'auto';
+                        }, 100);
+                    } else {
+                        setTimeout(() => {
+
+                            body.style.backgroundColor = "#050A11";
+
+                            circle.style.display = 'none';
+                            body.style.overflowY = 'auto';
+                        }, 1500);
+                    }
+
+                }, 3000);
+
+            }, 4000);
+
+        });
+    </script>
+</body>
+
+</html>

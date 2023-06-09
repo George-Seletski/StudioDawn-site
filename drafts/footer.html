@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        main,
+        menu,
+        nav,
+        section,
+        summary {
+            display: block;
+        }
+        
+        footer {
+            background-color: #050A11;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+            overflow: hidden;
+            padding-bottom: 50px;
+        }
+        
+        .column-2 {
+            padding: 0;
+            gap: 30px;
+            flex: 1;
+            align-items: flex-start;
+            margin-right: 0;
+            max-width: 100%;
+        }
+        
+        .footer-heading {
+            padding: 0;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0;
+            gap: 13px;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            font-style: normal;
+            font-weight: 100;
+            font-size: 24px;
+            line-height: 112%;
+        }
+        
+        .footer-email a,
+        .footer-telephone a {
+            text-decoration: none;
+        }
+        
+        .footer-telephone a {
+            font-size: 24px;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 100;
+            line-height: 112%;
+        }
+        
+        .footer-email a {
+            font-weight: 500;
+            font-size: 34px;
+        }
+        
+        .h1-footer {
+            font-family: 'Strong Concrete';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 63px;
+            line-height: 51px;
+            /* identical to box height */
+            text-transform: uppercase;
+            margin-bottom: 0;
+            text-align: left;
+        }
+        
+        .icons {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0;
+            gap: 10px;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+        
+        .icons>div {
+            border-radius: 4.6655px;
+            background-color: #FFFFFF;
+        }
+        
+        #instagram-icon {
+            background-image: url('/static/icons/instagram-svg.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 32px;
+            height: 32px;
+            transition: transform 0.5s, background-color 0.5s;
+        }
+        
+        #facebook-icon,
+        #instagram-icon,
+        #linkedin-icon {
+            transition: all 0.5s ease;
+        }
+        
+        #facebook-icon:hover,
+        #instagram-icon:hover,
+        #linkedin-icon:hover {
+            background-color: rgba(94, 90, 148, 0.466);
+            cursor: pointer;
+            transform: scale(0.95);
+        }
+        
+        #linkedin-icon {
+            background-image: url('/static/icons/linkedin-svg.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 32px;
+            height: 32px;
+        }
+        
+        #facebook-icon {
+            background-image: url('/static/icons/facebook-svg-large.svg');
+            background-repeat: no-repeat;
+            background-size: 100% 115%;
+            width: 32px;
+            height: 32px;
+        }
+        
+        .w-description-footer {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 100;
+            font-size: 24px;
+            line-height: 112%;
+            transition: transform 0.5s;
+        }
+        
+        .form-control::placeholder {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 112%;
+            color: #FFFFFF;
+        }
+        
+        .form-control:focus {
+            border-bottom-color: #FFFFFF;
+        }
+        
+        .container-footer-left {
+            margin-left: 70px;
+            padding: 0;
+            gap: 60px;
+            width: 600px;
+            top: calc(50% - 297px/2 + 1px);
+        }
+        
+        .container-footer-forms {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0;
+            width: 350px;
+            height: 308px;
+            top: 52px;
+            margin-right: 70px;
+            margin-left: calc(100% - (350px + 70px));
+        }
+        
+        textarea {
+            resize: none;
+        }
+        
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0;
+            gap: 30px;
+            width: 350px;
+            height: 220px;
+        }
+        
+        .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0;
+            gap: 20px;
+            width: 350px;
+            height: 40px;
+        }
+        
+        .textarea-message {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0;
+            gap: 60px;
+            width: 350px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px 0;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #979797;
+            color: #ddd;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        
+        .w-description-footer {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 112%;
+            color: #FFFFFF;
+        }
+        
+        @media screen and (max-width: 479px) {
+            .footer-email a {
+                font-weight: 500;
+                font-size: 24px;
+            }
+            .container-footer-forms {
+                margin-top: 500px;
+                margin-left: calc(100% - (196px + 140px));
+            }
+            .form {
+                width: 250px;
+            }
+            .textarea-message {
+                width: 250px;
+            }
+        }
+        
+        @media screen and (min-width: 767px) {
+            .container-footer-forms {
+                margin-left: calc(100% - (240px + 70px));
+            }
+            .form {
+                width: 250px;
+            }
+            .textarea-message {
+                width: 250px;
+            }
+            .h1-footer {
+                font-size: 53px;
+            }
+            .w-description-footer {
+                font-size: 20px !important;
+            }
+        }
+        
+        @media screen and (max-width: 991px) {
+            .container-footer-forms {
+                margin-left: calc(100% - (261px + 70px));
+            }
+            .form {
+                width: 250px;
+            }
+            .textarea-message {
+                width: 250px;
+            }
+            .h1-footer {
+                font-size: 53px;
+            }
+            .w-description-footer {
+                font-size: 20px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <div class="column-2 container-footer-left">
+            <div class="footer-heading">
+                <h1 class="h1-footer">get in touch</h1>
+                <span class="w-description-footer">if you’d like to create something bright together</span>
+            </div>
+            <div class="icons">
+                <div id="instagram-icon"></div>
+                <div id="linkedin-icon"></div>
+                <div id="facebook-icon"></div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-email"><a href="mailto:hello@dawnstudio.com">hello@dawnstudio.com</a></div>
+                <div class="footer-telephone"><a href="tel:+79639456498">+7-963-945-64-98</a></div>
+            </div>
+        </div>
+        <div class="column-2">
+            <div class="container-footer-forms">
+                <form class="post-form">
+                    <div class="form-container">
+                        <div class="form">
+                            <input class="form-control" type="text" id="name" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form">
+                            <input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="textarea-message">
+                            <textarea rows="6" cols="60" name="message" class="form-control" id="message" placeholder="Message" tabindex="4"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

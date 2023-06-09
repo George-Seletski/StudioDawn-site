@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #050A11;
+        }
+        
+        @keyframes timer {
+            0% {
+                --percentage: 0%;
+                transform: translateY(0%) scale(1);
+            }
+            100% {
+                --percentage: 100%;
+            }
+        }
+        
+        @property --percentage {
+            initial-value: 0%;
+            inherits: false;
+            syntax: "<percentage>";
+        }
+        
+        .preloader {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .chart {
+            background: conic-gradient(#FFFFFF var(--percentage), rgba(255, 255, 255, 0) 0);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+        }
+        
+        .chart.animate {
+            animation: timer 4s linear forwards;
+        }
+        
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: bottom 2s, transform 4s;
+            opacity: 0;
+        }
+        
+        .circle.animate-scale {
+            animation: scale 4s linear forwards;
+        }
+        /* Content Styles */
+        
+        .content {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .content p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="chart animate"></div>
+        <div class="circle"></div>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is the content of my webpage.</p>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            const chart = document.querySelector('.chart');
+            const circle = document.querySelector('.circle');
+            const content = document.querySelector('.content');
+            const body = document.body;
+
+            // Preloader animation
+            chart.classList.add('animate');
+
+            setTimeout(function() {
+                // Hide preloader
+                chart.style.opacity = '0';
+                circle.style.opacity = '1';
+                circle.style.bottom = '70vh';
+
+                if (window.innerWidth < 479) {
+                    circle.style.transform = 'translateX(-50%) scale(15)';
+                } else {
+                    circle.style.transform = 'translateX(-50%) scale(17)';
+                }
+
+                circle.style.backgroundColor = 'grey';
+
+                setTimeout(function() {
+                    circle.classList.add('animate-scale');
+
+                    if (window.innerWidth < 479) {
+                        setTimeout(function() {
+                            // Set background color and hide preloader
+                            body.style.backgroundColor = '#050A11';
+                            preloader.style.display = 'none';
+                            body.style.overflow = 'auto';
+                            content.style.display = 'block';
+                        }, 100);
+                    } else {
+                        setTimeout(function() {
+                            // Set background color and hide preloader
+                            body.style.backgroundColor = '#050A11';
+                            preloader.style.display = 'none';
+                            body.style.overflow = 'auto';
+                            content.style.display = 'block';
+                        }, 1500);
+                    }
+                }, 3000);
+            }, 4000);
+        });
+    </script>
+</body>
+
+</html>
