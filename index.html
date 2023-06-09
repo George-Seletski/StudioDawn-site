@@ -21,6 +21,9 @@
 </head>
 
 <body>
+    <div class="pointer"></div>
+    <div id="cursor-text"></div>
+
     <div class="header-wrapper w-nav" data-duration="400" data-collapse="all">
         <div class="container-default w-container">
 
@@ -30,16 +33,16 @@
                         <div class="w-container">
                             <ul role="list" class="nav-list">
                                 <li class="nav-item">
-                                    <a href="#about" class="nav-link">About</a>
+                                    <a href="index.html" class="nav-link w--current">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="cases.html" class="nav-link">Cases</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#contact" class="nav-link">Contact us</a>
+                                    <a href="/#contact" class="nav-link">Contact us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="team.html" class="nav-link">Our team</a>
+                                    <a href="team.html" class="nav-link">About</a>
                                 </li>
                             </ul>
                         </div>
@@ -82,7 +85,7 @@
                 </nav>
             </div>
             <div class="header-content-wrapper">
-                <a href="index.html" aria-current="page" class="header-logo-link w-nav-brand w--current">
+                <a href="index.html" aria-current="page" class="header-logo-link w-nav-brand w--current ">
                     <img src="./static/img/logo.png" alt="STUDIODAWN" class="header-logo" lazy="loading">
                 </a>
 
@@ -119,35 +122,41 @@
                 </div>
             </div>
         </div>
-        <div class="container-flex">
-            <div class="container-item ">
-                <h3>The What</h3>
-                <p class="w-description">From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional creativity to clients doing right by the world. We turn compelling ideas into commercial success stories through the power of brand in
-                    all its forms.</p>
-            </div>
-            <div class="container-item">
-                <h3>The How</h3>
-                <p class="w-description">We’re all about collective success. Everyone’s an equal in the creative process as we work toward a shared goal – no egos here. We don’t make our partners fit into our formula. Instead, we find what works for you.</p>
-            </div>
-            <div class="container-item">
-                <h3>The Why</h3>
-                <p class="w-description">We know designing the future starts with us, which is why w’re working on becoming a certified B-Corp. From the clients we work with to our internal processes, we genuinely care about the legacy we leave.</p>
-            </div>
 
-        </div>
 
 
     </section>
     <section>
-        <div class="section-main">
+        <div class="container-flex w3-items">
+            <div class="container-item ">
+                <h3>The What</h3>
+                <p class="w-description w3-item">From strategy to storytelling, brand experience to boundary-pushing design, we apply unconventional creativity to clients doing right by the world. We turn compelling ideas into commercial success stories through the power of brand in
+                    all its forms.</p>
+            </div>
+            <div class="container-item">
+                <h3>The How</h3>
+                <p class="w-description w3-item">We’re all about collective success. Everyone’s an equal in the creative process as we work toward a shared goal – no egos here. We don’t make our partners fit into our formula. Instead, we find what works for you.</p>
+            </div>
+            <div class="container-item">
+                <h3>The Why</h3>
+                <p class="w-description w3-item">We know designing the future starts with us, which is why w’re working on becoming a certified B-Corp. From the clients we work with to our internal processes, we genuinely care about the legacy we leave.</p>
+            </div>
 
+        </div>
+    </section>
+
+    <section>
+        <div class="section-main">
             <div class="container-flex">
                 <div class="column-2 section-text-left">
-                    <span>Unlock limitless possibilities with our comprehensive solutions block. From trademark management to digital transformation, we offer a wide range of services to elevate your brand's success. Harness the power of our solutions and propel
-                        your business to new heights in the ever-evolving digital landscape.</span>
+                    <span>Unlock limitless possibilities with our comprehensive solutions block. From trademark management to
+            digital transformation, we offer a wide range of services to elevate your brand's success. Harness the power
+            of our solutions and propel
+            your business to new heights in the ever-evolving digital landscape.</span>
                 </div>
                 <div class="column-2  section-text-right">button</div>
             </div>
+
             <div class="container-flex section-items">
 
                 <div class="container-item field-item">
@@ -207,20 +216,23 @@
             <div class="column-2 ">
                 <div class="instagram-content">
                     <h1 class="black">Instagram</h1>
+                    <span>
                     <p class="w-description-instagram">We don’t just design brands for pleasing aesthetic, we bring purposeful businesses to life and grant them longevity in the game.
 
-                    </p>
+                    </p></span>
+                    <span>
                     <p class="w-description-instagram">Follow us to stay updated with studio happenings and projects in the works.</p>
-
+</span >
+                    <span id="instagram-link">
                     <p><a href="#" class="link-email instagram-link">@STUDIODAWN.DIGITAL</a></p>
-
+</span>
 
 
                 </div>
             </div>
             <div class="column-2 instagram-images">
-                <div class="insta-image">image1</div>
-                <div class="insta-image">image2</div>
+                <div class="insta-image hover-area">image1</div>
+                <div class="insta-image hover-area">image2</div>
             </div>
         </div>
     </section>
@@ -289,6 +301,16 @@
                 disableScroll();
             } else {
                 enableScroll();
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        $(window).on("scroll", function() {
+            if ($(window).scrollTop() >= 30) {
+                $(".header-wrapper").addClass("with-effect");
+            } else {
+                $(".header-wrapper").removeClass("with-effect");
             }
         });
     });

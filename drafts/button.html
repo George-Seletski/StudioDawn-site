@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+    @font-face {
+        font-family: 'Strong Concrete';
+        src: url('/static/fonts/StrongConcrete.otf') format('woff2');
+    }
+    
+    @font-face {
+        font-family: 'Poppins Light';
+        src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+    }
+    
+    @font-face {
+        font-family: 'Strong Concrete Bold';
+        src: url('/static/fonts/StrongConcrete-Bold.otf') format('woff2');
+    }
+    
+    @font-face {
+        font-family: 'Strong Concrete Thin';
+        src: url('/static/fonts/StrongConcrete-Thin.otf') format('woff2');
+    }
+    
+    @font-face {
+        font-family: 'Strong Concrete Ultrabold';
+        src: url('/static/fonts/StrongConcrete-Ultrabold.otf') format('woff2');
+    }
+    
+    body {
+        background-color: grey;
+    }
+    
+    #button-text {
+        text-transform: uppercase;
+        padding: 4px;
+        Font-family: 'Poppins';
+        Font-style: Regular;
+        Font-size: 20px;
+        Line-height: 112%;
+        text-Align: Left Vertical;
+    }
+    
+    .button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        background-color: transparent;
+        margin: 100px;
+        border-radius: 18px;
+        width: 102px;
+    }
+    
+    .button:hover #border-top,
+    .button:hover #border-bottom {
+        background-color: #000;
+        border-color: #000;
+    }
+    
+    #border-top {
+        background-color: grey;
+        border-color: grey;
+        height: 2px;
+        width: 50px;
+        margin-top: -33px;
+        position: absolute;
+        z-index: 2;
+    }
+    
+    #border-bottom {
+        background-color: grey;
+        border-color: grey;
+        height: 2px;
+        width: 50px;
+        margin-bottom: -32px;
+        position: absolute;
+        z-index: 2;
+    }
+    
+    .horizontal-line {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid;
+        border-radius: 18px;
+        width: 102px;
+        color: #fff;
+    }
+    
+    .horizontal-line:hover {
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+        border-color: #000;
+        z-index: 0;
+    }
+</style>
+
+<body>
+    <div class="button">
+        <div id="border-top"></div>
+        <div class="horizontal-line">
+
+            <span id="button-text">submit</span>
+
+        </div>
+        <div id="border-bottom"></div>
+    </div>
+</body>
+
+</html>

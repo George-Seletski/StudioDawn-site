@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Smooth Scrolling</title>
+    <style>
+        nav,
+        section {
+            width: 70%;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            background-color: #1e4451;
+        }
+        
+        nav li {
+            display: inline-block;
+            position: relative;
+        }
+        
+        nav a {
+            display: block;
+            padding: 0 10px;
+            line-height: 50px;
+            color: #fff;
+            font-size: 17px;
+            text-decoration: none;
+        }
+        
+        section {
+            height: auto;
+            min-height: 400px;
+            border: 1px solid #eee;
+            box-shadow: 1px 2px 3px 1px #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#portfolio">Our Portfolio</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="about-us">
+        <h2>Who We Are</h2>
+    </section>
+    <section id="services">
+        <h2>Our Services</h2>
+    </section>
+    <section id="portfolio">
+        <h2>Our Portfolio</h2>
+    </section>
+    <section id="contact-us">
+        <h2>Contact Us</h2>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("a").on('click', function(event) {
+
+                if (this.hash !== "") {
+                    event.preventDefault();
+
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 1000, function() {
+
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
