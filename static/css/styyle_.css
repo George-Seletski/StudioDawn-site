@@ -117,6 +117,8 @@
         overflow: hidden !important;
         position: relative;
         height: 105vh;
+        z-index: 1;
+        background-color: #FFFFFF;
     }
     
     main {
@@ -622,11 +624,11 @@
         overflow: auto;
         gap: 120px;
         top: 90px;
-        margin: 60px 0;
+        margin: 70px 0;
     }
     
     .w3-items {
-        margin: 160px 0;
+        margin: 200px 0;
     }
     
     .w3-items>h3 {
@@ -635,6 +637,68 @@
     
     .w3-item {
         font-size: 18px !important;
+    }
+    /*HEADER-BACKGROUND*/
+    
+    .overlay {
+        position: absolute;
+        left: -10px;
+        width: 110%;
+        height: 110%;
+        /* background-image: url("/static/img/template_image.png");*/
+        background-color: #050A11;
+        background-size: cover;
+        filter: blur(5px);
+        background-clip: content-box;
+        /* Add this line to remove white shadows */
+        z-index: 1;
+        background-position-x: center;
+        background-position-y: center;
+    }
+    
+    .card {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('/static/img/tmp_image_3.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        animation: floatAnimation 3s infinite alternate;
+        z-index: 1;
+    }
+    
+    .green {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('/static/img/tmp_image_2.png');
+        background-position: center;
+        background-size: cover;
+        width: 20%;
+    }
+    
+    .red {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('/static/img/tmp_imgae_1.png');
+        background-position: center;
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .blue {
+        background-image: url('/static/img/tmp_image_3.png');
+        background-position: center;
+        background-size: cover;
+        width: 20%;
+    }
+    
+    @keyframes floatAnimation {
+        0% {
+            transform: scale(0.1);
+        }
+        100% {
+            transform: scale(0.6);
+        }
     }
     
     .container-flex-center {
@@ -743,7 +807,7 @@
     
     #instagram-link:hover {
         cursor: pointer;
-        /*transform: scale(0.85);*/
+        transform: scale(0.95);
     }
     
     .instagram-content {
@@ -803,10 +867,15 @@
         font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 14px !important;
         line-height: 112%;
         text-align: left;
         margin-right: 200px;
+        margin-top: 50px;
+        padding-bottom: 10px;
+    }
+    
+    .section-text-right {
         margin-top: 50px;
         padding-bottom: 10px;
     }
@@ -1127,14 +1196,13 @@
     }
     
     .header-section {
-        z-index: 0;
+        z-index: 3;
         height: 100vh;
         justify-content: center;
         align-items: center;
         display: flex;
         position: relative;
         overflow: hidden;
-        background-color: #050A11;
         overflow-x: hidden;
         width: 100%;
     }
