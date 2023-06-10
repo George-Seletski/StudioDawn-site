@@ -119,14 +119,26 @@
         height: 105vh;
     }
     
+    .section-w3 {
+        height: 100hv !important;
+    }
+    
     main {
         z-index: 0;
         height: 100%;
         margin-left: 70px;
         margin-right: 70px;
         margin-bottom: 100px;
-        display: flex;
-        flex-wrap: wrap;
+        /*display: flex;
+            flex-wrap: wrap;*/
+    }
+    
+    .cases-contianer {
+        display: grid;
+        background-color: #eee;
+        grid-gap: 25px 115px;
+        grid-template-columns: repeat(2, 780px);
+        grid-auto-flow: dense;
     }
     
     .column-container {
@@ -139,13 +151,18 @@
         font-size: 24px !important;
     }
     
+    .filter-box {
+        grid-column: 1 / 2;
+        border: 1px solid;
+    }
+    
     .filter-contianer {
         padding: 15px;
         gap: 50px;
         top: 350px;
-        display: flex;
         width: 565px;
         height: 132px;
+        display: flex;
         justify-content: flex-start;
         align-items: flex-start;
     }
@@ -182,36 +199,43 @@
         text-transform: uppercase;
     }
     
-    .cases-container {
-        display: flex;
-        padding: 0px;
-        gap: 90px;
-        flex-direction: column;
-    }
-    
     .case-card {
-        width: 594px;
         color: #050A11;
+        grid-column: span 1;
+        grid-row: span 2;
+        border: 1px solid;
     }
     
     .card-header-title>h2 {
         color: #050A11;
         text-align: right;
+        margin-right: 15px;
+        height: 15px;
     }
     
     .card-header-subtitle>h3 {
         color: #050A11;
         text-align: right;
+        margin-right: 15px;
     }
     
     .card-image {
-        width: 594px;
-        height: 594px;
+        height: 800px;
         background-image: url('/static/img/template_image.png');
         border-radius: 24.6655px;
         background-size: cover;
         background-position-x: 50%;
         background-position-y: 50%;
+        margin-top: 100px;
+    }
+    
+    .odd-card-1 {
+        height: 996px !important;
+    }
+    
+    .odd-card-2 {
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     
     .card-image-member-1 {
@@ -701,7 +725,7 @@
         font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 400 !important;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 112%;
         color: #050A11;
     }
@@ -777,7 +801,7 @@
     }
     
     .section-main-list>li {
-        font-size: 15px !important;
+        font-size: 16px !important;
     }
     
     .section-main-list li {
@@ -1142,7 +1166,7 @@
     .header-section-small {
         z-index: 0;
         height: 300px;
-        border: 1px solid gray;
+        /*border: 1px solid gray;*/
         display: flex;
         position: relative;
         overflow: hidden;
