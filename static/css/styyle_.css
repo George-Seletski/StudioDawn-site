@@ -673,14 +673,14 @@
         z-index: 1;
     }
     
-    .green {
+    .card-1 {
         background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('/static/img/tmp_image_2.png');
         background-position: center;
         background-size: cover;
         width: 20%;
     }
     
-    .red {
+    .card-3 {
         background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('/static/img/tmp_imgae_1.png');
         background-position: center;
         background-size: cover;
@@ -689,11 +689,36 @@
         background-color: rgba(0, 0, 0, 0.5);
     }
     
-    .blue {
-        background-image: url('/static/img/tmp_image_3.png');
+    .card-2 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('/static/img/tmp_image_3.png');
         background-position: center;
         background-size: cover;
         width: 20%;
+        height: 300px;
+    }
+    
+    .card-4 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('/static/img/tmp_image_2.png');
+        background-position: center;
+        background-size: cover;
+        width: 20%;
+        height: 300px;
+    }
+    
+    .card-5 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('/static/img/tmp_imgae_1.png');
+        background-position: center;
+        background-size: cover;
+        width: 20%;
+        height: 300px;
+    }
+    
+    .card-6 {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('/static/img/tmp_imgae_4.png');
+        background-position: center;
+        background-size: cover;
+        width: 20%;
+        height: 200px;
     }
     
     @keyframes floatAnimation {

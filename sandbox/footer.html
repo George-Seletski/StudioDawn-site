@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    footer {
+        background-color: #050A11;
+        display: flex;
+        justify-content: center;
+        height: 400px;
+        z-index: 1;
+        color: #fff;
+    }
+    
+    .footer-heading {
+        padding: 0px;
+    }
+    
+    .container-footer-left {
+        margin-left: 70px;
+        padding: 0px;
+        gap: 60px;
+        width: 600px;
+        top: calc(50% - 297px/2 + 1px);
+        flex-direction: column;
+    }
+    
+    .h1-footer {
+        font-family: 'Strong Concrete';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 63px;
+        line-height: 51px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        text-align: left;
+    }
+    
+    .w-description-footer {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 100 !important;
+        font-size: 24px;
+        line-height: 112%;
+        transition: transform 5s;
+        transition: all 0.5s ease;
+    }
+    
+    .icons {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 10px;
+    }
+    
+    .column-2 {
+        display: flex;
+        padding: 0px;
+        gap: 30px;
+        flex: 1;
+        margin-right: 0;
+        padding-top: 20px;
+        border: 1px solid gray;
+    }
+    
+    .icons>div {
+        border-radius: 4.6655px;
+        background-color: #FFFFFF;
+    }
+    
+    #instagram-icon {
+        background-image: url('/static/icons/instagram-svg.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 32px;
+        height: 32px;
+        transition: transform 5s;
+        transition: all 0.5s ease;
+    }
+    
+    #facebook-icon:hover,
+    #instagram-icon:hover,
+    #linkedin-icon:hover {
+        background-color: rgba(94, 90, 148, 0.466);
+        cursor: pointer;
+        transform: scale(0.95);
+    }
+    
+    #linkedin-icon {
+        background-image: url('/static/icons/linkedin-svg.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 32px;
+        height: 32px;
+        transition: transform 5s;
+        transition: all 0.5s ease;
+    }
+    
+    #facebook-icon {
+        background-image: url('/static/icons/facebook-svg-large.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 115%;
+        width: 32px;
+        height: 32px;
+        transition: transform 5s;
+        transition: all 0.5s ease;
+    }
+    
+    .container-footer-forms {
+        border: 1px solid gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px;
+        width: 350px;
+        height: 308px;
+        top: 52px;
+        margin-right: 70px;
+        margin-left: calc(100% - (350px + 70px));
+    }
+    
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 30px;
+        width: 350px;
+        height: 220px;
+    }
+    
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 20px;
+        width: 350px;
+        height: 40px;
+    }
+    
+    .form-control {
+        width: 100%;
+        padding: 10px 0;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #979797;
+        color: #ddd;
+        font-size: 14px;
+        outline: none;
+        transition: border-color .2s;
+    }
+    
+    .form-control::placeholder {
+        /* Secondary text */
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 112%;
+        /* or 20px */
+        /* Secondary */
+        color: #FFFFFF;
+    }
+    
+    .form-control:focus {
+        border-bottom-color: #FFFFFF;
+    }
+    
+    .textarea-message {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 60px;
+        width: 350px;
+    }
+    
+    @media screen and (max-width: 991px) {}
+</style>
+
+<body>
+    <footer>
+
+        <div class="column-2 container-footer-left ">
+            <div class="footer-heading">
+                <h1 class="h1-footer">get in touch</h1>
+                <span class="w-description-footer">if you’d like to create something bright together</span>
+            </div>
+            <div class="icons">
+                <div id="instagram-icon">
+
+                </div>
+                <div id="linkedin-icon">
+
+                </div>
+                <div id="facebook-icon">
+
+                </div>
+            </div>
+            <div class="footer-links">
+
+                <div class="footer-email"><a href="#">hello@dawnstudio.com</a></div>
+                <div class="footer-telephone"><a href="#">+7-963-945-64-98 </a>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <div class="column-2">
+            <div class="container-footer-forms">
+                <form class="post-form">
+                    <div class="form-container">
+
+                        <div class="form">
+                            <input class="form-control" type="text" id="name" name="name" placeholder="Name" required>
+                        </div>
+
+                        <div class="form">
+                            <input class="form-control" type="text" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="textarea-message">
+                            <textarea rows="6" cols="60" name="message" class="form-control" id="message" placeholder="Message" tabindex="4"></textarea>
+                        </div>
+
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

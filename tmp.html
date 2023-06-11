@@ -26,9 +26,12 @@
 <body>
     <div class="overlay"></div>
     <!-- Add overlay div -->
-    <div class="card green"></div>
-    <div class="card blue"></div>
-    <div class="card red"></div>
+    <div class="card card-1"></div>
+    <div class="card card-2"></div>
+    <div class="card card-3"></div>
+    <div class="card card-4"></div>
+    <div class="card card-5"></div>
+    <div class="card card-6"></div>
     <div class="card"></div>
 
     <!--<div class="pointer"></div>
@@ -353,10 +356,12 @@
     }
 
     // Function to generate random number between min and max
-    function getRandomNumber(min, max) {
+    /*function getRandomNumber(min, max) {
+        return Math.random() * (max - min) + min;
+    }*/
+    function getRandomPosition(min, max) {
         return Math.random() * (max - min) + min;
     }
-
     // Function to set random position for the card
     function setRandomPosition(card) {
         var windowWidth = window.innerWidth;
@@ -364,11 +369,14 @@
         var cardWidth = card.offsetWidth;
         var cardHeight = card.offsetHeight;
 
-        var randomX = getRandomNumber(0, windowWidth - cardWidth);
-        var randomY = getRandomNumber(0, windowHeight - cardHeight);
+        /*var randomX = getRandomNumber(0, windowWidth - cardWidth - 100);
+        var randomY = getRandomNumber(0, windowHeight - cardHeight - 100);
 
         card.style.left = randomX + 'px';
-        card.style.top = randomY + 'px';
+        card.style.top = randomY + 'px';*/
+
+        card.style.left = randomX + 'px';
+        card.style.top = randomY + 'px'
     }
 
     // Set initial positions for all the cards

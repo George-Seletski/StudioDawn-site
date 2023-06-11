@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIODAWN</title>
+    <link rel="stylesheet" href="./static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="./static/css/normalize.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Poppins:regular"]
+            }
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <section id="header">
+        <img class='header-image' lazy="loading" src="./static/img/template_image.png" alt="" srcset="">
+        <div class="container-flex">
+            <div class="column-2 section-text-left">
+                <div class="label">
+                    <span> product design</span></div>
+                <div class="label"><span>logo</span></div>
+                <div class="label"><span>2022</span></div>
+            </div>
+            <div class="column-2  section-text-right">button</div>
+        </div>
+    </section>
+    <section>
+
+    </section>
+    <footer>
+
+        <div class="column-2 container-footer ">
+            <div class="footer-heading">
+                <h1 class="h1-footer">get in touch</h1>
+                <span class="w-description-footer">if you’d like to create something bright together</span>
+            </div>
+            <div class="icons">
+                <div id="instagram-icon">
+
+                </div>
+                <div id="linkedin-icon">
+
+                </div>
+                <div id="facebook-icon">
+
+                </div>
+            </div>
+            <div class="footer-links">
+
+                <div class="footer-email"><a href="#">hello@dawnstudio.com</a></div>
+                <div class="footer-telephone"><a href="#">+7-963-945-64-98 </a>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <div class="column-2">
+            <div class="container-footer-forms">
+                <form class="post-form">
+                    <div class="form-container">
+
+                        <div class="form">
+                            <input class="form-control" type="text" id="name" name="name" placeholder="Name" required>
+                        </div>
+
+                        <div class="form">
+                            <input class="form-control" type="text" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="textarea-message">
+                            <textarea rows="6" cols="60" name="message" class="form-control" id="message" placeholder="Message" tabindex="4"></textarea>
+                        </div>
+
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script>
+    $(document).ready(function() {
+        $('.hamburger-menu-wrapper').click(function() {
+            var $navMenu = $('.w-nav-menu');
+            $navMenu.toggle();
+            $(this).toggleClass('w--open');
+
+            // Disable scroll when menu is open
+            if ($navMenu.is(':visible')) {
+                disableScroll();
+            } else {
+                enableScroll();
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        $(window).on("scroll", function() {
+            if ($(window).scrollTop() >= 30) {
+                $(".header-wrapper").addClass("with-effect");
+            } else {
+                $(".header-wrapper").removeClass("with-effect");
+            }
+        });
+    });
+
+    // Disable scroll
+    function disableScroll() {
+        // Get the current scroll position
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        // Save the current scroll position and add scroll-lock styles
+        window.onscroll = function() {
+            window.scrollTo(scrollLeft, scrollTop);
+        };
+        document.body.classList.add('scroll-lock');
+    }
+
+    // Enable scroll
+    function enableScroll() {
+        window.onscroll = null;
+        document.body.classList.remove('scroll-lock');
+    }
+</script>
+
+</html>

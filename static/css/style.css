@@ -57,7 +57,6 @@
     section,
     summary {
         display: block;
-        border: 1px solid;
     }
     
     h1,
@@ -250,6 +249,17 @@
         background-position-x: 50%;
         background-position-y: 50%;
         border-radius: 24.6655px;
+    }
+    
+    .header-image {
+        width: 100%;
+        z-index: -2;
+        position: absolute;
+    }
+    
+    .label {
+        color: #050A11;
+        background-color: #FFFFFF;
     }
     
     .card-image-member-2 {
@@ -647,7 +657,7 @@
         overflow: auto;
         gap: 120px;
         top: 90px;
-        margin: 60px 0;
+        padding: 60px 0;
         flex-direction: row;
     }
     
@@ -732,13 +742,12 @@
         font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 18px;
         line-height: 112%;
         color: #050A11;
     }
     
     .instagram-section {
-        height: 570px;
         gap: 0 !important;
         margin: 200px 0;
     }
@@ -909,8 +918,8 @@
         background-color: #050A11;
         display: flex;
         justify-content: center;
-        height: 400px;
         z-index: 1;
+        padding-bottom: 70px;
     }
     
     .footer-heading {
@@ -946,7 +955,7 @@
     
     .footer-email a {
         font-weight: 500 !important;
-        font-size: 34px !important;
+        font-size: 24px !important;
     }
     
     .h1-footer {
@@ -1037,18 +1046,18 @@
         border-bottom-color: #FFFFFF;
     }
     
-    .container-footer-left {
+    .container-footer {
         margin-left: 70px;
         padding: 0px;
         gap: 60px;
         width: 600px;
         top: calc(50% - 297px/2 + 1px);
+        flex-direction: column;
     }
     
     .container-footer-forms {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         padding: 0px;
         width: 350px;
         height: 308px;
@@ -1102,15 +1111,6 @@
         font-size: 14px;
         outline: none;
         transition: border-color .2s;
-    }
-    
-    .w-description-footer {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 2em;
-        line-height: 112%;
-        color: #FFFFFF;
     }
     
     .nav-list {
@@ -1220,7 +1220,6 @@
     }
     
     .header-section-content-small {
-        border: 1px solid gray;
         z-index: 0;
         max-width: 100%;
         text-align: left;
@@ -1334,7 +1333,7 @@
         }
         .w3-item,
         .w-description {
-            font-size: 24px !important;
+            font-size: 16px !important;
         }
         .header-section {
             padding-top: 45%;
@@ -1389,14 +1388,17 @@
             gap: 30px;
         }
         .container-item {
-            width: 600px;
+            width: 450px;
             margin-bottom: 0;
             margin-top: 0;
-            height: 250px;
+            height: 200px;
         }
         .container-flex {
             flex-direction: column;
             gap: 30px;
+        }
+        .team-section {
+            height: 900px !important;
         }
         .container-small {
             margin-left: 0;
@@ -1404,9 +1406,9 @@
             margin-top: 0px;
         }
         .image-team {
-            width: 752.71px;
-            height: 473px;
-            margin: 50px 35px;
+            width: 652.71px;
+            height: 373px;
+            margin: 10px 35px;
         }
         .section-items {
             gap: 20px !important;
@@ -1415,23 +1417,56 @@
             margin-bottom: 30px;
         }
         .field-item {
-            height: 500px;
+            height: 450px;
+            margin-left: 70px;
+            margin-right: 70px;
+            width: 450px;
         }
         .section-main-list>li {
-            font-size: 20px !important;
+            font-size: 16px !important;
         }
         .column-2 {
             height: 600px !important;
         }
         .section-text-left {
-            width: 600px;
+            width: 450px;
         }
         .section-text-left>span {
-            font-size: 24px !important;
+            font-size: 16px !important;
             line-height: 112%;
         }
         .instagram-images {
-            flex-direction: column;
+            flex-direction: row;
+            margin-left: 120px;
+        }
+        .insta-image {
+            width: 247px;
+            height: 247px;
+            border-radius: 20px;
+        }
+        .instagram-content {
+            margin-left: 0px;
+        }
+        #instagram-link {
+            margin: 70px 0px;
+            transition: all 0.2s ease-in-out;
+        }
+        .instagram-section {
+            margin-top: 10px;
+            margin-bottom: 70px;
+        }
+        .insta-image-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            opacity: 0;
+            margin: 70px;
+            background-image: url('/static/icons/arrow-right-up.svg');
+            background-position: center;
+            background-size: 30px;
+            background-repeat: no-repeat;
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
         }
     }
     
