@@ -26,15 +26,15 @@
     }
     
     body {
+        width: 100%;
         margin: 0;
         height: 100%;
         box-sizing: border-box;
         transition: var(--transition);
-        background-color: #FFFFFF;
         font-family: 'Poppins', sans-serif;
         font-size: 14px;
         line-height: 20px;
-        overflow-x: hidden;
+        overflow-x: hidden !important;
     }
     
     html {
@@ -113,14 +113,17 @@
     }
     
     section {
-        width: 100%;
-        overflow: hidden !important;
         position: relative;
         height: 105vh;
     }
     
     .section-w3 {
+        height: 105hv !important;
+    }
+    
+    .team-section {
         height: 100hv !important;
+        padding-top: 70px;
     }
     
     main {
@@ -335,13 +338,12 @@
         margin-left: -50px;
         background-size: cover;
     }
-    
-    .w-nav:before,
+    /* .w-nav:before,
     .w-nav:after {
         content: " ";
         grid-area: 1/1/2/2;
         display: table;
-    }
+    }*/
     
     .header-top {
         font-family: 'Strong Concrete Thin';
@@ -361,7 +363,7 @@
     }
     
     .black {
-        color: #050A11;
+        color: #050A11 !important;
     }
     
     .pointer {
@@ -378,10 +380,9 @@
     .pointer--link {
         transform: translate(-50%, -50%) scale(1);
     }
-    
-    .w-nav:after {
+    /*.w-nav:after {
         clear: both;
-    }
+    }*/
     
     .w-container {
         margin-left: auto;
@@ -647,6 +648,7 @@
         gap: 120px;
         top: 90px;
         margin: 60px 0;
+        flex-direction: row;
     }
     
     .w3-items {
@@ -664,9 +666,7 @@
     .container-flex-center {
         display: flex;
         justify-content: center;
-        /* Added */
         align-items: center;
-        /* Added */
         overflow: auto;
         gap: 170px;
         margin-left: 70px;
@@ -676,7 +676,7 @@
     }
     
     .container-item {
-        margin-top: 10em;
+        margin-top: 7em;
         padding: 25px;
         display: flex;
         flex-direction: column;
@@ -712,13 +712,11 @@
     
     .column-2 {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
         padding: 0px;
         gap: 30px;
         flex: 1;
-        align-items: flex-start;
         margin-right: 0;
+        padding-top: 20px;
     }
     
     .w-description {
@@ -791,8 +789,56 @@
     .insta-image {
         width: 447px;
         height: 447px;
-        background-color: #696565 !important;
         border-radius: 20px;
+    }
+    
+    .image-1 {
+        background-image: url('/static/img/inst_1.png');
+        background-position: 10%;
+        background-size: cover;
+        background-position-x: 50%;
+        background-position-y: 50%;
+    }
+    
+    .image-2 {
+        background-image: url('/static/img/inst_2.png');
+        background-position: 10%;
+        background-size: cover;
+        background-position-x: 50%;
+        background-position-y: 50%;
+    }
+    
+    .image-1,
+    .image-2 {
+        opacity: 1;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    
+    .insta-image-icon {
+        background-color: rgba(136, 136, 136, 0.425);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        opacity: 0;
+        margin: 170px;
+        background-image: url('/static/icons/arrow-right-up.svg');
+        background-position: center;
+        background-size: 60px;
+        background-repeat: no-repeat;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    
+    .image-1:hover,
+    .image-2:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+    
+    .image-1:hover .insta-image-icon,
+    .image-2:hover .insta-image-icon {
+        opacity: .8;
     }
     
     .section-main-list {
@@ -831,12 +877,12 @@
         line-height: 112%;
         text-align: left;
         margin-right: 200px;
-        margin-top: 50px;
+        padding-top: 90px;
         padding-bottom: 10px;
     }
     
     .section-text-left>span {
-        width: 90%;
+        width: 900px;
         font-size: 16px !important;
     }
     
@@ -861,7 +907,6 @@
     
     footer {
         background-color: #050A11;
-        width: 100%;
         display: flex;
         justify-content: center;
         height: 400px;
@@ -910,7 +955,6 @@
         font-weight: 700;
         font-size: 63px;
         line-height: 51px;
-        /* identical to box height */
         text-transform: uppercase;
         margin-bottom: 0;
         text-align: left;
@@ -1271,17 +1315,26 @@
         animation-play-state: paused;
         top: 90px;
     }
-    /*--TICKER--*/
     
     @media screen and (max-width: 991px) {
+        section {
+            height: 100%;
+        }
         h1 {
             font-size: 60px;
         }
         h2 {
             font-size: 50px;
         }
+        h3 {
+            font-size: 40px;
+        }
         .w-container {
             max-width: 728px;
+        }
+        .w3-item,
+        .w-description {
+            font-size: 24px !important;
         }
         .header-section {
             padding-top: 45%;
@@ -1308,6 +1361,7 @@
             background-color: #050A11;
             padding-left: 0;
             padding-right: 0;
+            overflow: auto !important;
         }
         .hamburger-menu-wrapper {
             /*order: -1;*/
@@ -1323,7 +1377,7 @@
             margin-bottom: 0;
         }
         .nav-link {
-            font-size: 35px;
+            font-size: 52px;
         }
         .nav-item {
             margin-bottom: 12px;
@@ -1335,7 +1389,49 @@
             gap: 30px;
         }
         .container-item {
-            width: 400px;
+            width: 600px;
+            margin-bottom: 0;
+            margin-top: 0;
+            height: 250px;
+        }
+        .container-flex {
+            flex-direction: column;
+            gap: 30px;
+        }
+        .container-small {
+            margin-left: 0;
+            width: 600px;
+            margin-top: 0px;
+        }
+        .image-team {
+            width: 752.71px;
+            height: 473px;
+            margin: 50px 35px;
+        }
+        .section-items {
+            gap: 20px !important;
+        }
+        .container-item>h3 {
+            margin-bottom: 30px;
+        }
+        .field-item {
+            height: 500px;
+        }
+        .section-main-list>li {
+            font-size: 20px !important;
+        }
+        .column-2 {
+            height: 600px !important;
+        }
+        .section-text-left {
+            width: 600px;
+        }
+        .section-text-left>span {
+            font-size: 24px !important;
+            line-height: 112%;
+        }
+        .instagram-images {
+            flex-direction: column;
         }
     }
     
@@ -1431,9 +1527,10 @@
         .header-section {
             padding-top: 45%;
             height: 100%;
+            width: 100%;
         }
         .header-section-content {
-            max-width: 95%;
+            width: 100%;
             padding-left: 16px;
             padding-right: 16px;
             font-size: 15px;

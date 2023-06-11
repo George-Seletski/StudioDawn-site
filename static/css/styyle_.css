@@ -606,7 +606,7 @@
     
     .large-font {
         font-style: normal;
-        font-size: 20px !important;
+        font-size: 24px !important;
         line-height: 112% !important;
     }
     
@@ -628,8 +628,7 @@
         align-items: center;
         overflow: auto;
         gap: 120px;
-        top: 90px;
-        margin: 70px 0;
+        margin: 67px 0;
     }
     
     .w3-items {
@@ -641,7 +640,7 @@
     }
     
     .w3-item {
-        font-size: 18px !important;
+        font-size: 20px !important;
     }
     /*HEADER-BACKGROUND*/
     

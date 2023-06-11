@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    section,
+    summary {
+        display: block;
+        border: 1px solid;
+    }
+    
+    section {
+        width: 100%;
+        overflow: hidden !important;
+        position: relative;
+        height: 105vh;
+    }
+    
+    .container-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+        gap: 120px;
+        top: 90px;
+        margin: 70px 0;
+        flex-direction: row;
+    }
+    
+    .column-2 {
+        display: flex;
+        padding: 0px;
+        gap: 30px;
+        flex: 100%;
+        margin-right: 0;
+    }
+    
+    .image-team {
+        width: 985.71px;
+        height: 684px;
+        border-radius: 24.6655px;
+        /*background-image: url('/static/img/team.png');
+            background-position: 10%;
+            margin-left: -50px;
+            background-size: cover;*/
+        background-color: grey;
+        margin-left: -50px;
+    }
+    
+    .container-small {
+        width: 484px;
+        height: 554px;
+        padding: 0px;
+        gap: 30px;
+        text-align: left;
+        /*margin-right: 14.5em;*/
+        margin-left: 140px;
+        padding: 20px;
+        margin-top: 257px;
+    }
+    
+    .h2-item {
+        color: #050A11;
+        font-family: 'Strong Concrete';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 27px;
+        line-height: 58px;
+        text-transform: uppercase;
+        text-align: left;
+        padding-bottom: 30px;
+    }
+    
+    .w-description {
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 400 !important;
+        font-size: 16px;
+        line-height: 112%;
+        color: #050A11;
+    }
+    
+    .large-font {
+        font-style: normal;
+        font-size: 20px !important;
+        line-height: 112% !important;
+    }
+    
+    @media screen and (max-width: 991px) {
+        .container-flex {
+            flex-direction: column;
+        }
+        .container-small {
+            margin-left: 0;
+        }
+        .image-team {
+            width: 865.71px;
+            height: 585px;
+            margin: 0;
+        }
+    }
+    
+    @media screen and (max-width: 767px) {
+        .container-flex {
+            flex-direction: column;
+        }
+        .container-small {
+            margin-left: 0;
+        }
+        .image-team {
+            width: 594.71px;
+            height: 462px;
+            margin: 0;
+        }
+    }
+    
+    @media screen and (max-width: 479px) {
+        .container-flex {
+            flex-direction: column;
+        }
+        .container-small {
+            margin-left: 0;
+            width: 343px;
+            height: 554px;
+        }
+        .image-team {
+            width: 381px;
+            height: 296px;
+            margin: 0;
+        }
+    }
+</style>
+
+<body>
+    <section>
+        <div class="container-flex">
+            <div class="column-2">
+                <div class="image-team"></div>
+            </div>
+            <div class="column-2">
+                <div class="container-small">
+                    <h2 class="h2-item">Turn your imagination into reality</h2>
+                    <p class="w-description large-font">In our agency the dawn of creativity breaks through the digital horizon, transforming ideas into extraordinary digital experiences. Join us on the journey of creativity and digital transformation.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+</body>
+
+</html>
