@@ -356,9 +356,10 @@
     }
 
     // Function to generate random number between min and max
-    /*function getRandomNumber(min, max) {
+    function getRandomNumber(min, max) {
         return Math.random() * (max - min) + min;
-    }*/
+    }
+
     function getRandomPosition(min, max) {
         return Math.random() * (max - min) + min;
     }
@@ -369,11 +370,11 @@
         var cardWidth = card.offsetWidth;
         var cardHeight = card.offsetHeight;
 
-        /*var randomX = getRandomNumber(0, windowWidth - cardWidth - 100);
+        var randomX = getRandomNumber(0, windowWidth - cardWidth - 100);
         var randomY = getRandomNumber(0, windowHeight - cardHeight - 100);
 
         card.style.left = randomX + 'px';
-        card.style.top = randomY + 'px';*/
+        card.style.top = randomY + 'px';
 
         card.style.left = randomX + 'px';
         card.style.top = randomY + 'px'

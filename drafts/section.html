@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #header-bg {
+        background-image: url('/static/img/template_image.png');
+        background-size: cover;
+        height: 1080px !important;
+    }
+    
+    .container-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+        gap: 120px;
+        top: 90px;
+        padding: 60px 0;
+        flex-direction: row;
+        border: 1px solid;
+    }
+    
+    .column-2 {
+        display: flex;
+        padding: 0px;
+        gap: 30px;
+        flex: 1;
+        margin-right: 0;
+    }
+    
+    .section-text-left {
+        flex: 3;
+        margin-left: 160px !important;
+        /* Main text */
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 112%;
+        text-align: left;
+        margin-right: 200px;
+        padding-top: 90px;
+        padding-bottom: 10px;
+    }
+    
+    .label {
+        color: #050A11;
+        background-color: #FFFFFF;
+        padding: 10px;
+        border-radius: 24.6655px;
+    }
+    
+    .year-l {}
+    
+    .section-text-right {
+        padding-top: 90px;
+    }
+</style>
+
+<body>
+    <section id="header-bg">
+
+        <div class="container-flex ">
+            <div class="column-2 section-text-left ">
+                <div class="label"><span> product design</span></div>
+                <div class="label"><span>logo</span></div>
+                <div class="label year-l"><span>2022</span></div>
+            </div>
+            <div class="column-2  section-text-right">button</div>
+        </div>
+
+    </section>
+</body>
+
+</html>

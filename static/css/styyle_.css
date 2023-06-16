@@ -627,7 +627,7 @@
         justify-content: center;
         align-items: center;
         overflow: auto;
-        gap: 120px;
+        gap: 160px;
         margin: 67px 0;
     }
     
@@ -906,6 +906,7 @@
     
     .section-text-right {
         margin-top: 50px;
+        padding: 100px 0 !important;
         padding-bottom: 10px;
     }
     

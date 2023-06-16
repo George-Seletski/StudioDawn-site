@@ -134,50 +134,61 @@
 
             <div class="case-card">
 
-                <div class="card-header">
-                    <div class="card-header-title">
-                        <h2>nft app design</h2>
-                    </div>
-                    <div class="card-header-subtitle">
-                        <h3>market.coin</h3>
-                    </div>
-                </div>
                 <a href="case0.html" target="_blank" rel="noopener noreferrer">
-                    <div class="card-image"></div>
+                    <div class="card-image">
+                        <div class="card-header">
+                            <div class="card-header-title">
+                                <h2>nft app design</h2>
+                            </div>
+                            <div class="card-header-subtitle">
+                                <h3>market.coin</h3>
+                            </div>
+                        </div>
+                    </div>
                 </a>
             </div>
             <div class="case-card odd-card">
-                <div class="card-header">
-                    <div class="card-header-title">
-                        <h2>nft app design</h2>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <div class="card-image ">
+                        <div class="card-header">
+                            <div class="card-header-title">
+                                <h2>nft app design</h2>
+                            </div>
+                            <div class="card-header-subtitle">
+                                <h3>market.coin</h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-header-subtitle">
-                        <h3>market.coin</h3>
-                    </div>
-                </div>
-                <div class="card-image "></div>
+                </a>
             </div>
             <div class="case-card ">
-                <div class="card-header">
-                    <div class="card-header-title">
-                        <h2>nft app design</h2>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <div class="card-image odd-card">
+                        <div class="card-header">
+                            <div class="card-header-title">
+                                <h2>nft app design</h2>
+                            </div>
+                            <div class="card-header-subtitle">
+                                <h3>market.coin</h3>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="card-header-subtitle">
-                        <h3>market.coin</h3>
-                    </div>
-                </div>
-                <div class="card-image odd-card"></div>
+                </a>
             </div>
-            <div class="case-card ">
-                <div class="card-header">
-                    <div class="card-header-title">
-                        <h2>nft app design</h2>
+            <div class="case-card odd-card">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <div class="card-image ">
+                        <div class="card-header">
+                            <div class="card-header-title">
+                                <h2>nft app design</h2>
+                            </div>
+                            <div class="card-header-subtitle">
+                                <h3>market.coin</h3>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-header-subtitle left">
-                        <h3>market.coin</h3>
-                    </div>
-                </div>
-                <div class="card-image "></div>
+                </a>
             </div>
 
         </div>
@@ -249,6 +260,16 @@
                 disableScroll();
             } else {
                 enableScroll();
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        $(window).on("scroll", function() {
+            if ($(window).scrollTop() >= 30) {
+                $(".header-wrapper").addClass("with-effect");
+            } else {
+                $(".header-wrapper").removeClass("with-effect");
             }
         });
     });
