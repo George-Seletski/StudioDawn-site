@@ -115,7 +115,7 @@
     }
     
     section {
-        border: 1px solid;
+        /*border: 1px solid;*/
         position: relative;
         height: 100hv !important;
     }
@@ -126,6 +126,7 @@
     
     .review-section {
         height: fit-content;
+        margin-bottom: 200px;
     }
     
     main {
@@ -285,7 +286,7 @@
         font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 14px !important;
+        font-size: 16px !important;
         line-height: 112%;
         text-align: left;
         margin-top: 50px;
@@ -767,7 +768,7 @@
         overflow: auto;
         gap: 120px;
         top: 90px;
-        padding: 60px 0;
+        padding: 25px 0;
         flex-direction: row;
     }
     
@@ -810,7 +811,7 @@
         border-radius: 24.6655px;
         cursor: default;
         transition: all 0.7s ease;
-        border: 1px solid;
+        /*border: 1px solid;*/
     }
     
     .container-item:hover {
